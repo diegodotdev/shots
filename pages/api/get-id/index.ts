@@ -20,6 +20,6 @@ export default async function handler(
     });
     res.status(200).send(id);
   } catch (error) {
-    res.status(500).send({ message: "Something went wrong, try again" });
+    res.status(500).send(error);
   }
 }

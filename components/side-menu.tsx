@@ -4,8 +4,9 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Plus, User } from "lucide-react";
+import { Heart, User } from "lucide-react";
 import PostButton from "./post-button";
+import ThemeButtons from "./theme-buttons";
 
 export default function SideMenu() {
   const { data: session } = useSession();
@@ -19,7 +20,9 @@ export default function SideMenu() {
             variant="ghost"
             className={cn(
               "flex items-center gap-2 w-full justify-start",
-              pathname === link.href ? "bg-[#1e293b]" : "bg-transparent"
+              pathname === link.href
+                ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
+                : "bg-transparent"
             )}
           >
             <link.icon />
@@ -27,6 +30,7 @@ export default function SideMenu() {
           </Button>
         </Link>
       ))}
+      {!session && <ThemeButtons />}
       {session && (
         <>
           <Link href="/profile">
@@ -34,13 +38,30 @@ export default function SideMenu() {
               variant="ghost"
               className={cn(
                 "flex items-center gap-2 w-full justify-start",
-                pathname === "/profile" ? "bg-[#1e293b]" : "bg-transparent"
+                pathname === "/profile"
+                  ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
+                  : "bg-transparent"
               )}
             >
               <User />
               <span>Profile</span>
             </Button>
           </Link>
+          <Link href="/likes">
+            <Button
+              variant="ghost"
+              className={cn(
+                "flex items-center gap-2 w-full justify-start",
+                pathname === "/likes"
+                  ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
+                  : "bg-transparent"
+              )}
+            >
+              <Heart />
+              <span>Likes</span>
+            </Button>
+          </Link>
+          <ThemeButtons />
           <PostButton />
         </>
       )}

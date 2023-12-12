@@ -25,13 +25,13 @@ export default function App({ posts }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4">
+      <ScrollArea className="w-3/4 h-[88vh]">
         <Masonry
           className="flex gap-4 py-4 pl-4 w-full"
           breakpointCols={breakpointColumnsObj}
         >
           {posts?.map((post) => (
-            <Link href={post?.id} key={post?.id} className="w-full">
+            <Link href={`/p/${post?.id}`} key={post?.id} className="w-full">
               <div className="w-full rounded-lg overflow-hidden relative">
                 <Image
                   src={post?.image}
@@ -56,7 +56,7 @@ export const getServerSideProps = async () => {
       cache: "no-store",
     }
   );
-  const posts: Post[] = await response.json();
+  const posts = await response.json();
 
   return {
     props: {
