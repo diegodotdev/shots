@@ -21,8 +21,8 @@ export default function Users({ users }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
-        <div className="p-4 mx-auto w-4/5 flex flex-col gap-4">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
+        <div className="p-4 mx-auto w-full md:w-4/5 flex flex-col gap-4">
           <Input
             type="text"
             className="w-full"

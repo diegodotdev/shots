@@ -42,7 +42,7 @@ export default function Profile({ user }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
         <div className="w-full p-4">
           <div className="flex items-center gap-2">
             <Image
@@ -75,8 +75,8 @@ export default function Profile({ user }: Props) {
                   <DialogHeader>
                     <DialogTitle>What do you want to do?</DialogTitle>
                   </DialogHeader>
-                  <div className="w-full flex items-center gap-2">
-                    <Link href={`/p/${post?.id}`} className="w-1/2">
+                  <div className="w-full flex items-center gap-2 flex-col md:flex-row">
+                    <Link href={`/p/${post?.id}`} className="w-full md:w-1/2">
                       <Button className="w-full text-white">View</Button>
                     </Link>
                     <DialogTrigger asChild>

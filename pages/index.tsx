@@ -25,7 +25,7 @@ export default function App({ posts }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
         <Masonry
           className="flex gap-4 py-4 pl-4 w-full"
           breakpointCols={breakpointColumnsObj}

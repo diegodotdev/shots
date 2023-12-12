@@ -12,20 +12,20 @@ export default function ThemeButtons() {
       {theme === "dark" ? (
         <Button
           variant="ghost"
-          className="flex items-center gap-2 w-full justify-start"
+          className="flex items-center gap-2 w-full justify-center md:justify-start"
           onClick={() => setTheme("light")}
         >
           <Sun />
-          <span>Light Mode</span>
+          <span className="hidden md:inline">Light Mode</span>
         </Button>
       ) : (
         <Button
           variant="ghost"
-          className="flex items-center gap-2 w-full justify-start"
+          className="flex items-center gap-2 w-full justify-center md:justify-start"
           onClick={() => setTheme("dark")}
         >
           <Moon />
-          <span>Dark Mode</span>
+          <span className="hidden md:inline">Dark Mode</span>
         </Button>
       )}
     </div>

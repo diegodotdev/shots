@@ -93,8 +93,8 @@ export default function Post({ post, session }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
-        <div className="w-4/5 mx-auto flex flex-col gap-4 p-4">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
+        <div className="w-full md:w-4/5 mx-auto flex flex-col gap-4 p-4">
           <div className="w-full flex justify-between items-center">
             <Link
               href={`/u/${post?.userId}`}

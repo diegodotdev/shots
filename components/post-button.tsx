@@ -78,9 +78,9 @@ export default function PostButton() {
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="text-white w-full bg-[#3576df] flex justify-center items-center gap-2 py-2 rounded-[.5em]">
+        <div className="text-white w-full bg-[#3576df] flex justify-center md:justify-center items-center gap-2 py-2 rounded-[.5em]">
           <Plus />
-          <span>Post</span>
+          <span className="hidden md:inline">Post</span>
         </div>
       </DialogTrigger>
       <DialogContent>

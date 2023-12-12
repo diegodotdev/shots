@@ -13,20 +13,20 @@ export default function SideMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="w-1/4 py-4 pr-4 h-[88vh] border-r border-gray-200 flex flex-col gap-8">
+    <div className="w-1/5 md:w-1/4 py-4 pr-4 h-[88vh] border-r border-gray-200 flex flex-col gap-8">
       {SIDE_MENU_LINKS.map((link) => (
         <Link href={link.href} key={link.id}>
           <Button
             variant="ghost"
             className={cn(
-              "flex items-center gap-2 w-full justify-start",
+              "flex items-center gap-2 w-full justify-center md:justify-start",
               pathname === link.href
                 ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
                 : "bg-transparent"
             )}
           >
             <link.icon />
-            <span>{link.title}</span>
+            <span className="hidden md:inline">{link.title}</span>
           </Button>
         </Link>
       ))}
@@ -37,28 +37,28 @@ export default function SideMenu() {
             <Button
               variant="ghost"
               className={cn(
-                "flex items-center gap-2 w-full justify-start",
+                "flex items-center gap-2 w-full justify-center md:justify-start",
                 pathname === "/profile"
                   ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
                   : "bg-transparent"
               )}
             >
               <User />
-              <span>Profile</span>
+              <span className="hidden md:inline">Profile</span>
             </Button>
           </Link>
           <Link href="/likes">
             <Button
               variant="ghost"
               className={cn(
-                "flex items-center gap-2 w-full justify-start",
+                "flex items-center gap-2 w-full justify-center md:justify-start",
                 pathname === "/likes"
                   ? "bg-[#f1f5f9] dark:bg-[#1e293b]"
                   : "bg-transparent"
               )}
             >
               <Heart />
-              <span>Likes</span>
+              <span className="hidden md:inline">Likes</span>
             </Button>
           </Link>
           <ThemeButtons />

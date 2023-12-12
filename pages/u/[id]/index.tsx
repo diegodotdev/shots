@@ -25,7 +25,7 @@ export default function User({ user }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
         <div className="w-full p-4">
           <div className="flex items-center gap-2">
             <Image

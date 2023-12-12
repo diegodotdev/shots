@@ -7,7 +7,6 @@ import Head from "next/head";
 import { GetServerSidePropsContext } from "next";
 import prisma from "@/db/prisma";
 import { getSession } from "next-auth/react";
-import { removePost } from "@/lib/requests";
 
 type Props = {
   user: User;
@@ -28,7 +27,7 @@ export default function Profile({ user }: Props) {
       <Head>
         <title>Shots</title>
       </Head>
-      <ScrollArea className="w-3/4 h-[88vh]">
+      <ScrollArea className="w-4/5 md:w-3/4 h-[88vh]">
         <div className="w-full p-4">
           <Masonry
             className="flex gap-4 w-full"
