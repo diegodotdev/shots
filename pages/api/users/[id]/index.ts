@@ -14,6 +14,11 @@ export default async function handler(
       },
       include: {
         posts: true,
+        likes: {
+          include: {
+            post: true,
+          },
+        },
       },
     });
     return res.status(200).send(post);

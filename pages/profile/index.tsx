@@ -15,6 +15,8 @@ import {
   DialogContent,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { removePost } from "@/lib/requests";
+import { revalidatePath } from "next/cache";
 
 type Props = {
   user: User;
@@ -30,6 +32,11 @@ const breakpointColumnsObj = {
 };
 
 export default function Profile({ user }: Props) {
+  const onDelete = async (id: string) => {
+    await removePost({ id: id });
+    window.location.reload();
+  };
+
   return (
     <>
       <Head>
@@ -48,7 +55,7 @@ export default function Profile({ user }: Props) {
             <p className="text-xl">{user?.name}</p>
           </div>
           <Masonry
-            className="flex gap-4 py-4 pl-4 w-full"
+            className="flex gap-4 py-4 w-full"
             breakpointCols={breakpointColumnsObj}
           >
             {user?.posts?.map((post) => (
@@ -76,7 +83,7 @@ export default function Profile({ user }: Props) {
                       <Button
                         variant="destructive"
                         className="w-full md:w-1/2"
-                        onClick={() => console.log("post")}
+                        onClick={() => onDelete(post?.id)}
                       >
                         Delete
                       </Button>

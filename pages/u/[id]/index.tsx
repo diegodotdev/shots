@@ -38,7 +38,7 @@ export default function User({ user }: Props) {
             <p className="text-xl">{user?.name}</p>
           </div>
           <Masonry
-            className="flex gap-4 py-4 pl-4 w-full"
+            className="flex gap-4 py-4 w-full"
             breakpointCols={breakpointColumnsObj}
           >
             {user?.posts?.map((post) => (

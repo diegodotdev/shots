@@ -70,3 +70,18 @@ export const removeLike = async (body: { id: string }) => {
   const result = await response.json();
   return result;
 };
+
+export const removePost = async (body: { id: string }) => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }
+  );
+  const result = await response.json();
+  return result;
+};
